@@ -71,20 +71,20 @@ function chooseTheme() {
  $('.full-scann').on('click', function () {
 	 var docElm = document.documentElement;
 	 //W3C
-if (docElm.requestFullscreen) {
-    docElm.requestFullscreen();
-}
-//FireFox
-else if (docElm.mozRequestFullScreen) {
-    docElm.mozRequestFullScreen();
-}
-//Chrome等
-else if (docElm.webkitRequestFullScreen) {
-    docElm.webkitRequestFullScreen();
-}
-//IE11
-else if (elem.msRequestFullscreen) {
-  elem.msRequestFullscreen();
-}
-        layer.msg('按Esc即可退出全屏');
-    });
+	if (docElm.requestFullscreen) {
+	    docElm.requestFullscreen();
+	}
+	//FireFox
+	else if (docElm.mozRequestFullScreen) {
+	    docElm.mozRequestFullScreen();
+	}
+	//Chrome等
+	else if (docElm.webkitRequestFullScreen) {
+	    docElm.webkitRequestFullScreen();
+	}
+	//IE11
+	else if (elem.msRequestFullscreen) {
+	  elem.msRequestFullscreen();
+	}
+  layer.msg('按Esc即可退出全屏');
+});
