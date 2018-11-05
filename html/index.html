@@ -4,53 +4,113 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Perfree-LayUI后台模板</title>
-  <link rel="stylesheet" href="/plugins/layui/css/layui.css">
-  <link rel="stylesheet" href="/plugins/layer/theme/default/layer.css">
-  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="stylesheet" href="../plugins/layui/css/layui.css">
+  <link rel="stylesheet" href="../plugins/layer/theme/default/layer.css">
+  <link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body class="layui-layout-body">
-<div class="layui-layout layui-layout-admin">
-  #@header()
-  #@menu()
-  <div class="layui-body">
-	  <div class="layui-tab layui-tab-brief layui-tab-card" lay-allowClose="true" lay-filter="demo">
-		  <ul class="layui-tab-title" id="tabTitle">
-		  	<li lay-id="0" style="display: none"><i class="layui-icon">&#xe68e;</i> 模板</li>
-		    <li lay-id="1" class="layui-this"><i class="layui-icon">&#xe68e;</i> 主页</li>
-		  </ul>
-		  <div class="layui-tab-content" id="tabContent">
-		  	<div class="layui-tab-item layui-show">
-				
-			</div>
-		    <div class="layui-tab-item layui-show">
-				<iframe src='/console' scrolling='auto' width='100%' height='100%' frameborder='0' ></iframe>
-			</div>
-		  </div>
-		</div>
-	</div>
-  #@footer()
-</div>
-<script src="/static/js/jquery.min.js"></script>
-<script src="/plugins/layer/layer.js"></script>
-<script src="/plugins/layui/layui.js"></script>
-<script src="/static/js/index.js"></script>
-<script>
+  <div class="layui-layout layui-layout-admin">
+    <!-- nav start 导航部分开始 -->
+    <div class="layui-header" id="lay-header">
+      <ul class="layui-nav layui-layout-left left-nav-list">
+        <li class="layui-nav-item" lay-unselect>
+	    	     <a href="javascript:;" class="menuBtn" title="显示/隐藏菜单"><i class="layui-icon" style="font-size: 17px;">&#xe668;</i></a>
+        </li>
+        <li class="layui-nav-item" lay-unselect><a href="javascript:;">某某某</a></li>
+        <li class="layui-nav-item" lay-unselect><a href="">商品管理</a></li>
+        <li class="layui-nav-item" lay-unselect><a href="">用户</a></li>
+        <li class="layui-nav-item" lay-unselect>
+            <a href="javascript:;">其它系统&nbsp;&nbsp;</a>
+            <dl class="layui-nav-child">
+              <dd><a href="">邮件管理</a></dd>
+              <dd><a href="">消息管理</a></dd>
+              <dd><a href="">授权管理</a></dd>
+            </dl>
+        </li>
+      </ul>
+      <ul class="layui-nav layui-layout-right" id="user-header-right">
+        <li class="layui-nav-item" lay-unselect>
+          <a href="javascript:;" title="消息"><i class="layui-icon" style="font-size: 17px;">&#xe667;</i></a>
+        </li>
+        <li class="layui-nav-item" lay-unselect>
+          <a href="javascript:;" title="更换主题" onclick="chooseTheme();"><i class="layui-icon" style="font-size: 17px;">&#xe66a;</i></a>
+        </li>
+        <li class="layui-nav-item" lay-unselect>
+          <a href="javascript:;" title="全屏"  class="full-scann"><i class="layui-icon" style="font-size: 17px;">&#xe638;</i></a>
+        </li>
+        <li class="layui-nav-item" lay-unselect>
+          <a href="javascript:;">
+            <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+            Perfree&nbsp;&nbsp;
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="">基本资料</a></dd>
+            <dd><a href="">安全设置</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+    <!-- nav end 导航部分结束 -->
 
-layui.use('element', function(){
-  var element = layui.element;
-//触发事件
-  var active = {
-    tabAdd: function(){
-      //新增一个Tab项
-      element.tabAdd('demo', {
-        title: '新选项'+ (Math.random()*1000|0) //用于演示
-        ,content: '内容'+ (Math.random()*1000|0)
-        ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
-      })
-    }
-    }
-});
-
-</script>
+    <!-- menu start 菜单部分开始 -->
+    <div class="layui-side layui-bg-black" id="navbarMenu">
+      <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test" lay-shrink="all">
+          <li class="layui-nav-item"><div class="layui-logo">Perfree-LayUI后台模板</div></li>
+          <li class="layui-nav-item"><a href="javascript:;" onclick="openTab('&#xe68e','主页','./console.html',1);">主页</a></li>
+          <li class="layui-nav-item layui-nav-itemed">
+            <a class="" href="javascript:;">所有商品</a>
+            <dl class="layui-nav-child">
+              <dd onclick="openTab('&#xe615;','百度','https://www.baidu.com',2)"><a href="javascript:;" >百度</a></dd>
+              <dd><a href="javascript:;" onclick="openTab('&#xe756;','perfree小记','https://www.yinpengfei.com',3);">Perfree小记</a></dd>
+              <dd><a href="javascript:;" onclick="openTab();">超链接</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">解决方案</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;" onclick="openTab();">列表一</a></dd>
+              <dd><a href="javascript:;" onclick="openTab();">列表二</a></dd>
+              <dd><a href="javascript:;" data-type="tabAdd">超链接</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item"><a href="javascript:;" onclick="openTab();">云市场</a></li>
+          <li class="layui-nav-item"><a href="javascript:;" onclick="openTab();">发布商品</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- menu end 菜单部分结束 -->
+    <!-- content start 内容部分开始 -->
+    <div class="layui-body">
+      <div class="layui-tab layui-tab-brief layui-tab-card" lay-allowClose="true" lay-filter="demo">
+        <ul class="layui-tab-title" id="tabTitle">
+        	<li lay-id="0" style="display: none"><i class="layui-icon">&#xe68e;</i> 模板</li>
+          <li lay-id="1" class="layui-this"><i class="layui-icon">&#xe68e;</i> 主页</li>
+        </ul>
+        <div class="layui-tab-content" id="tabContent">
+          <div class="layui-tab-item layui-show">
+          </div>
+          <div class="layui-tab-item layui-show">
+            <iframe src='./console.html' scrolling='auto' width='100%' height='100%' frameborder='0' ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content end 内容部分结束 -->
+    <!-- footer start 底部footer开始 -->
+    <div class="layui-footer">
+      © yinpengfei.com - Perfree小记
+    </div>
+    <!-- footer end 底部footer结束 -->
+  </div>
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../plugins/layer/layer.js"></script>
+  <script src="../plugins/layui/layui.js"></script>
+  <script src="../static/js/index.js"></script>
+  <script>
+    layui.use('element', function(){
+      var element = layui.element;
+    });
+  </script>
 </body>
 </html>

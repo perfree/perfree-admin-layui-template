@@ -63,8 +63,8 @@ function chooseTheme() {
 		  fixed: true,
 		  offset: 'r',
 		  area: ['350px', '90%'],
-		  content: '/theme' //iframe的url
-		}); 
+		  content: './theme.html' //iframe的url
+		});
 }
 $(window).on('resize', function () {
     var $content = $('.admin-nav-card .layui-tab-content');
@@ -76,15 +76,15 @@ $(window).on('resize', function () {
 /**全屏*/
  $('.full-scann').on('click', function () {
         var docElm = document.documentElement;
-        //W3C  
+        //W3C
         if (docElm.requestFullscreen) {
             docElm.requestFullscreen();
         }
-        //FireFox  
+        //FireFox
         else if (docElm.mozRequestFullScreen) {
             docElm.mozRequestFullScreen();
         }
-        //Chrome等  
+        //Chrome等
         else if (docElm.webkitRequestFullScreen) {
             docElm.webkitRequestFullScreen();
         }
