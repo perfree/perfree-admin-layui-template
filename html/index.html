@@ -10,6 +10,7 @@
 </head>
 <body class="layui-layout-body">
   <div class="layui-layout layui-layout-admin">
+
     <!-- nav start 导航部分开始 -->
     <div class="layui-header" id="lay-header">
       <ul class="layui-nav layui-layout-left left-nav-list">
@@ -56,7 +57,9 @@
     <div class="layui-side layui-bg-black" id="navbarMenu">
       <div class="layui-side-scroll">
         <ul class="layui-nav layui-nav-tree"  lay-filter="test" lay-shrink="all">
-          <li class="layui-nav-item"><div class="layui-logo">Perfree-LayUI后台模板</div></li>
+          <li class="layui-nav-item">
+            <div class="layui-logo nav-logo-text">Perfree-LayUI后台模板</div>
+          </li>
           <li class="layui-nav-item"><a href="javascript:;" onclick="openTab('&#xe68e','主页','./console.html',1);">主页</a></li>
           <li class="layui-nav-item layui-nav-itemed">
             <a class="" href="javascript:;">所有商品</a>
@@ -80,6 +83,7 @@
       </div>
     </div>
     <!-- menu end 菜单部分结束 -->
+
     <!-- content start 内容部分开始 -->
     <div class="layui-body">
       <div class="layui-tab layui-tab-brief layui-tab-card" lay-allowClose="true" lay-filter="demo">
@@ -91,17 +95,19 @@
           <div class="layui-tab-item layui-show">
           </div>
           <div class="layui-tab-item layui-show">
-            <iframe src='./console.html' scrolling='auto' width='100%' height='100%' frameborder='0' ></iframe>
+            <iframe src='./console.html' scrolling='auto' width='100%' height='100%' frameborder='0' allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
           </div>
         </div>
       </div>
     </div>
     <!-- content end 内容部分结束 -->
+
     <!-- footer start 底部footer开始 -->
     <div class="layui-footer">
       © yinpengfei.com - Perfree小记
     </div>
     <!-- footer end 底部footer结束 -->
+
   </div>
   <script src="../static/js/jquery.min.js"></script>
   <script src="../plugins/layer/layer.js"></script>

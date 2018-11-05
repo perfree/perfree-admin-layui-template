@@ -66,31 +66,25 @@ function chooseTheme() {
 		  content: './theme.html' //iframe的url
 		});
 }
-$(window).on('resize', function () {
-    var $content = $('.admin-nav-card .layui-tab-content');
-    $content.height($(this).height() - 147);
-    $content.find('iframe').each(function () {
-        $(this).height($content.height());
-    });
-}).resize();
+
 /**全屏*/
  $('.full-scann').on('click', function () {
-        var docElm = document.documentElement;
-        //W3C
-        if (docElm.requestFullscreen) {
-            docElm.requestFullscreen();
-        }
-        //FireFox
-        else if (docElm.mozRequestFullScreen) {
-            docElm.mozRequestFullScreen();
-        }
-        //Chrome等
-        else if (docElm.webkitRequestFullScreen) {
-            docElm.webkitRequestFullScreen();
-        }
-        //IE11
-        else if (elem.msRequestFullscreen) {
-            elem.msRequestFullscreen();
-        }
+	 var docElm = document.documentElement;
+	 //W3C
+if (docElm.requestFullscreen) {
+    docElm.requestFullscreen();
+}
+//FireFox
+else if (docElm.mozRequestFullScreen) {
+    docElm.mozRequestFullScreen();
+}
+//Chrome等
+else if (docElm.webkitRequestFullScreen) {
+    docElm.webkitRequestFullScreen();
+}
+//IE11
+else if (elem.msRequestFullscreen) {
+  elem.msRequestFullscreen();
+}
         layer.msg('按Esc即可退出全屏');
     });
