@@ -1,0 +1,58 @@
+.layui-header{
+	left: 200px;
+}
+.layui-layout-admin .layui-side{
+	top:0px;
+}
+.layui-layout-admin .layui-logo{
+	 position: static;
+     width: 200px;
+    height: 100%; 
+}
+.layui-nav{
+	padding: 0;
+	background-color: #23262e;
+}
+.layui-bg-black {
+    background-color: #23262e!important;
+}
+.layui-layout-left{
+	position: absolute!important;
+    left: 0;
+    top: 0;
+}
+.layui-tab-content{
+	padding: 10px;
+    position: absolute;
+    left: 0px;
+    right: 0;
+    top: 31px;
+    bottom: 0;
+}
+.layui-tab{
+	position: absolute;
+    left: 0px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: 0;
+}
+.layui-tab-item{
+	position: absolute;
+    left: 0px;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+}
+.layui-nav .layui-nav-item a{
+	padding: 0 10px;
+}
+.layui-tab-item iframe{
+	background: #f2f2f2;
+}
+.layui-layout-right{
+	right: 220px;
+}
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{
+	height: 3px;
+}
