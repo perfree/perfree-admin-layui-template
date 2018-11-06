@@ -17,7 +17,7 @@ function openTab(icon,menuName,url,tabId) {
 				//添加tab
 				element.tabAdd('demo', {
 				  title: "<i class='layui-icon'>"+icon+"</i> "+menuName
-				  ,content: "<iframe src='"+url+"' scrolling='auto' width='100%' height='100%' frameborder='0' ></iframe>" //支持传入html
+				  ,content: "<iframe src='"+url+"' scrolling='auto' width='100%' height='100%' frameborder='0' class='layui-anim layui-anim-upbit'></iframe>" //支持传入html
 				  ,id: tabId
 				});
 				//切换至新添加tab
