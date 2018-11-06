@@ -6,7 +6,8 @@
   <title>Perfree-LayUI后台模板</title>
   <link rel="stylesheet" href="../plugins/layui/css/layui.css">
   <link rel="stylesheet" href="../plugins/layer/theme/default/layer.css">
-  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="../perfree/css/index.css">
+  <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
 </head>
 <body class="layui-layout-body">
   <div class="layui-layout layui-layout-admin">
@@ -15,18 +16,7 @@
     <div class="layui-header" id="lay-header">
       <ul class="layui-nav layui-layout-left left-nav-list">
         <li class="layui-nav-item" lay-unselect>
-	    	     <a href="javascript:;" class="menuBtn" title="显示/隐藏菜单"><i class="layui-icon" style="font-size: 17px;">&#xe668;</i></a>
-        </li>
-        <li class="layui-nav-item" lay-unselect><a href="javascript:;">某某某</a></li>
-        <li class="layui-nav-item" lay-unselect><a href="">商品管理</a></li>
-        <li class="layui-nav-item" lay-unselect><a href="">用户</a></li>
-        <li class="layui-nav-item" lay-unselect>
-            <a href="javascript:;">其它系统&nbsp;&nbsp;</a>
-            <dl class="layui-nav-child">
-              <dd><a href="">邮件管理</a></dd>
-              <dd><a href="">消息管理</a></dd>
-              <dd><a href="">授权管理</a></dd>
-            </dl>
+	    	     <a href="javascript:;" class="menuBtn" title="显示/隐藏菜单"><i class="fa fa-navicon fa-lg"></i></a>
         </li>
       </ul>
       <ul class="layui-nav layui-layout-right" id="user-header-right">
@@ -56,30 +46,30 @@
     <!-- menu start 菜单部分开始 -->
     <div class="layui-side layui-bg-black" id="navbarMenu">
       <div class="layui-side-scroll">
-        <ul class="layui-nav layui-nav-tree"  lay-filter="test" lay-shrink="all">
+        <div class="layui-logo">
+          <a href="#" class="logo-text"><i class="fa fa-envira fa-lg"></i> <span class='logo-text-value'>Perfree-Admin</span></a>
+        </div>
+        <ul class="layui-nav layui-nav-tree left-menu"  lay-filter="menu" lay-shrink="all">
           <li class="layui-nav-item">
-            <div class="layui-logo nav-logo-text">Perfree-LayUI后台模板</div>
+            <a href="javascript:;" class="nav-menu-a" onclick="openTab('&#xe68e','主页','./main.html',1);"><i class="fa fa-home fa-lg"></i>  <span class="menu-text">主页</span></a>
           </li>
           <li class="layui-nav-item">
-            <a href="javascript:;" class="nav-menu-a" onclick="openTab('&#xe68e','主页','./main.html',1);"><i class="layui-icon">&#xe68e;</i>  主页</a>
-          </li>
-          <li class="layui-nav-item">
-            <a href="javascript:;" class="nav-menu-a" ><i class="layui-icon">&#xe64d;</i>  外部链接</a>
+            <a href="javascript:;" class="nav-menu-a" ><i class="fa fa-location-arrow fa-lg"></i>  <span class="menu-text">外部链接</span></a>
             <dl class="layui-nav-child">
-              <dd onclick="openTab('&#xe615;','百度','https://www.baidu.com',2)">
+              <dd onclick="openTab('&#xe615;','百度','https://www.baidu.com',2)" class="child-menu">
                 <a href="javascript:;" class="nav-menu-a-child" >百度</a>
               </dd>
-              <dd>
+              <dd class="child-menu">
                 <a href="javascript:;" onclick="openTab('&#xe756;','perfree小记','https://www.yinpengfei.com',3);" class="nav-menu-a-child" >Perfree小记</a>
               </dd>
             </dl>
           </li>
           <li class="layui-nav-item">
-            <a href="javascript:;" class="nav-menu-a"><i class="layui-icon">&#xe62d;</i>  表单</a>
+            <a href="javascript:;" class="nav-menu-a"><i class="fa fa-list-alt fa-lg"></i>  <span class="menu-text">表单</span></a>
             <dl class="layui-nav-child">
-              <dd><a href="javascript:;" class="nav-menu-a-child" >列表一</a></dd>
-              <dd><a href="javascript:;" class="nav-menu-a-child" >列表二</a></dd>
-              <dd><a href="javascript:;" class="nav-menu-a-child" >列表二</a></dd>
+              <dd class="child-menu"><a href="javascript:;" class="nav-menu-a-child" >列表一</a></dd>
+              <dd class="child-menu"><a href="javascript:;" class="nav-menu-a-child" >列表二</a></dd>
+              <dd class="child-menu"><a href="javascript:;" class="nav-menu-a-child" >列表二</a></dd>
             </dl>
           </li>
         </ul>
@@ -112,10 +102,10 @@
     <!-- footer end 底部footer结束 -->
 
   </div>
-  <script src="../static/js/jquery.min.js"></script>
+  <script src="../perfree/js/jquery.min.js"></script>
   <script src="../plugins/layer/layer.js"></script>
   <script src="../plugins/layui/layui.js"></script>
-  <script src="../static/js/index.js"></script>
+  <script src="../perfree/js/index.js"></script>
   <script>
     layui.use('element', function(){
       var element = layui.element;

@@ -23,35 +23,72 @@ function openTab(icon,menuName,url,tabId) {
 				//切换至新添加tab
 				element.tabChange('demo', tabId);
 			}
-
 		}
-      });
+  });
 }
 /** 收起侧边栏 */
 var flag = 0;
 $(".menuBtn").on("click",function(){
 	if(flag == 0){
-		var subStr = $(".layui-logo").text();
-		var logoText = $(".layui-logo").text();
-		$("#navbarMenu").animate({width:0}, 500 );
-		$(".layui-body").animate({left:0}, 500 );
-		$(".layui-footer").animate({left:0}, 500 );
-		$(".menuBtn > i ").remove();
-		$(".menuBtn").append("<i class='layui-icon' style='font-size: 18px;''>&#xe66b;</i>");
-		$("#lay-header").animate({left:0}, 500 );
-		$("#user-header-right").animate({right:"20px"}, 500 );
+		hideNav();
 		flag = 1;
 	}else{
-		$(".layui-body").animate({left:"200px"}, 500 );
-		$(".layui-footer").animate({left:"200px"}, 500 );
-		$("#lay-header").animate({left:"200px"}, 500 );
-		$("#user-header-right").animate({right:"220px"}, 500 );
-		$("#navbarMenu").animate({width:"200px"}, 500 );
-		$(".menuBtn > i ").remove();
-		$(".menuBtn").append("<i class='layui-icon' style='font-size: 18px;''>&#xe668;</i>");
+		showNav();
 		flag = 0;
 	}
 });
+/** 菜单导航点击事件 */
+$('.nav-menu-a').on('click', function () {
+	if(flag == 1){
+		showNav();
+		flag = 0;
+	}
+});
+/** 隐藏导航栏文字,显示图标 */
+function hideNav(){
+	$(".nav-menu-a > .menu-text").hide();
+	$(".layui-nav-more").hide();
+	$("#navbarMenu").animate({width:50}, 0 );
+	$(".logo-text > .logo-text-value").hide();
+	$(".layui-logo").animate({width:50}, 0 );
+	$(".layui-body").animate({left:50}, 0 );
+	$(".layui-footer").animate({left:50}, 0 );
+	$("#lay-header").animate({left:50}, 0 );
+	$("#user-header-right").animate({right:"70px"}, 0 );
+	//将二级导航栏隐藏
+	$(".child-menu").css("display","none");
+}
+/** 显示完全菜单导航 */
+function showNav(){
+	layer.closeAll('tips');
+	$(".layui-body").animate({left:"200px"}, 0 );
+	$(".layui-footer").animate({left:"200px"}, 0 );
+	$("#lay-header").animate({left:"200px"}, 0 );
+	$("#user-header-right").animate({right:"220px"}, 0 );
+	$(".logo-text > .logo-text-value").show();
+	$(".layui-logo").animate({width:200}, 0 );
+	$(".nav-menu-a > .menu-text").show();
+	$(".layui-nav-more").show();
+	$(".child-menu").css("display","block");
+	$("#navbarMenu").animate({width:"200px"},0 );
+}
+/** 菜单缩小时提示框 */
+$(".left-menu > .layui-nav-item").hover(function(){
+	if(flag == 1){
+		var tip = $(this).children(".nav-menu-a").children(".menu-text").text();
+		var that = this;
+		layer.closeAll('tips');
+		layer.open({
+			type: 4,
+			time: 1000,
+			shade: 0,
+			isOutAnim: false,
+			closeBtn: 0,
+			shadeClose: true,
+			content: [tip, that] //数组第二项即吸附元素选择器或者DOM
+		});
+	}
+})
 /**更换主题*/
 function chooseTheme() {
 	layer.open({
@@ -66,7 +103,6 @@ function chooseTheme() {
 		  content: './theme.html' //iframe的url
 		});
 }
-
 /**全屏*/
  $('.full-scann').on('click', function () {
 	 var docElm = document.documentElement;
