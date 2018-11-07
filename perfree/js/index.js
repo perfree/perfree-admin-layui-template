@@ -73,13 +73,34 @@ function showNav(){
 	$("#navbarMenu").animate({width:"200px"},0 );
 }
 /** 菜单缩小时提示框 */
-$(".left-menu > .layui-nav-item").hover(function(){
-	if(flag == 1){
-		var tip = $(this).children(".nav-menu-a").children(".menu-text").text();
+$(".left-menu > .layui-nav-item").hover(
+	function(){
+		if(flag == 1){
+			var tip = $(this).children(".nav-menu-a").children(".menu-text").text();
+			var that = this;
+			layer.closeAll('tips');
+			layer.open({
+				type: 4,
+				shade: 0,
+				isOutAnim: false,
+				closeBtn: 0,
+				shadeClose: true,
+				content: [tip, that] //数组第二项即吸附元素选择器或者DOM
+			});
+		}
+	},
+	function(){
+		layer.closeAll('tips');
+	}
+)
+$(".nav-top-icon").hover(
+	function(){
+		var tip = $(this).children("a").attr("lay-tips");
 		var that = this;
 		layer.closeAll('tips');
 		layer.open({
 			type: 4,
+			tips: 3,
 			time: 1000,
 			shade: 0,
 			isOutAnim: false,
@@ -87,8 +108,11 @@ $(".left-menu > .layui-nav-item").hover(function(){
 			shadeClose: true,
 			content: [tip, that] //数组第二项即吸附元素选择器或者DOM
 		});
+	},
+	function(){
+		layer.closeAll('tips');
 	}
-})
+)
 /**更换主题*/
 function chooseTheme() {
 	layer.open({
