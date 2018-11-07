@@ -17,25 +17,25 @@
 }
 .layui-layout-admin .layui-logo{
 	text-align: center;
-  color: #009688;
-  font-size: 16px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1002;
-  width: 200px;
-  height: 59px;
-  padding: 0px 10px;
-  box-sizing: border-box;
-  overflow: hidden;
-  font-weight: 400;
-  background-repeat: no-repeat;
-  background-position: center center;
-  line-height: 59px;
+	color: #009688;
+	font-size: 16px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1002;
+	width: 200px;
+	height: 59px;
+	padding: 0px 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	font-weight: 400;
+	background-repeat: no-repeat;
+	background-position: center center;
+	line-height: 59px;
 	border-bottom: 1px solid #181a1f;
 }
 .layui-layout-admin .layui-logo .logo-text{
-  color: #009688;
+	color: #009688;
 }
 .layui-nav{
 	padding: 0;
