@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Perfree-LayUI后台模板</title>
+  <title>Perfree-Admin</title>
   <link rel="stylesheet" href="../plugins/layui/css/layui.css">
   <link rel="stylesheet" href="../plugins/layer/theme/default/layer.css">
   <link rel="stylesheet" href="../perfree/css/index.css">
@@ -13,21 +13,21 @@
   <div class="layui-layout layui-layout-admin">
 
     <!-- nav start 导航部分开始 -->
-    <div class="layui-header" id="lay-header">
+    <div class="layui-header navbar-header">
       <ul class="layui-nav layui-layout-left left-nav-list">
         <li class="layui-nav-item nav-top-icon" lay-unselect>
-	    	     <a href="javascript:;" class="menuBtn" lay-tips="显示/隐藏菜单"><i class="fa fa-navicon fa-lg"></i></a>
+		  <a href="javascript:;" class="menuBtn" lay-tips="显示/隐藏菜单"><i class="fa fa-navicon" style="font-size: 16px;"></i></a>
         </li>
       </ul>
-      <ul class="layui-nav layui-layout-right" id="user-header-right">
+      <ul class="layui-nav layui-layout-right nav-header-right">
         <li class="layui-nav-item nav-top-icon" lay-unselect>
-          <a href="javascript:;" lay-tips="消息"><i class="layui-icon" style="font-size: 17px;">&#xe667;</i></a>
+          <a href="javascript:;" lay-tips="消息"><i class="fa fa-bell-o" style="font-size: 16px;"></i></a>
         </li>
         <li class="layui-nav-item nav-top-icon" lay-unselect>
-          <a href="javascript:;" lay-tips="更换主题" onclick="chooseTheme();"><i class="layui-icon" style="font-size: 17px;">&#xe66a;</i></a>
+          <a href="javascript:;" lay-tips="更换主题" class="choose-theme-btn"><i class="fa fa-tachometer" style="font-size: 16px;"></i></a>
         </li>
         <li class="layui-nav-item nav-top-icon" lay-unselect>
-          <a href="javascript:;" lay-tips="全屏"  class="full-scann"><i class="layui-icon" style="font-size: 17px;">&#xe638;</i></a>
+          <a href="javascript:;" lay-tips="全屏"  class="full-scann"><i class="fa fa-arrows" style="font-size: 16px;"></i></a>
         </li>
         <li class="layui-nav-item" lay-unselect>
           <a href="javascript:;">
@@ -44,28 +44,28 @@
     <!-- nav end 导航部分结束 -->
 
     <!-- menu start 菜单部分开始 -->
-    <div class="layui-side layui-bg-black" id="navbarMenu">
+    <div class="layui-side layui-bg-black left-navbar-menu">
       <div class="layui-side-scroll">
         <div class="layui-logo">
-          <a href="#" class="logo-text"><i class="fa fa-envira fa-lg"></i> <span class='logo-text-value'>Perfree-Admin</span></a>
+          <a href="#" class="logo-text"><i class="fa fa-pagelines" style="font-size: 20px;"></i> <span class='logo-text-value'>Perfree-Admin</span></a>
         </div>
         <ul class="layui-nav layui-nav-tree left-menu"  lay-filter="menu" lay-shrink="all">
           <li class="layui-nav-item" lay-unselect>
-            <a href="javascript:;" class="nav-menu-a" onclick="openTab('&#xe68e','主页','./main.html',1);"><i class="fa fa-home fa-lg"></i>  <span class="menu-text">主页</span></a>
+            <a href="javascript:;" class="nav-menu-a" onclick="openTab('&#xe68e','主页','./main.html',1);"><i class="fa fa-home" style="font-size: 16px;"></i>  <span class="menu-text">主页</span></a>
           </li>
           <li class="layui-nav-item" lay-unselect>
-            <a href="javascript:;" class="nav-menu-a" ><i class="fa fa-location-arrow fa-lg"></i>  <span class="menu-text">外部链接</span></a>
+            <a href="javascript:;" class="nav-menu-a" ><i class="fa fa-location-arrow" style="font-size: 16px;"></i>  <span class="menu-text">外部链接</span></a>
             <dl class="layui-nav-child">
               <dd onclick="openTab('&#xe615;','百度','https://www.baidu.com',2)" class="child-menu" lay-unselect>
                 <a href="javascript:;" class="nav-menu-a-child" >百度</a>
               </dd>
               <dd class="child-menu" lay-unselect>
-                <a href="javascript:;" onclick="openTab('&#xe756;','perfree小记','https://www.yinpengfei.com',3);" class="nav-menu-a-child" >Perfree小记</a>
+                <a href="javascript:;" onclick="openTab('location-arrow','perfree小记','https://www.yinpengfei.com',3);" class="nav-menu-a-child" >Perfree小记</a>
               </dd>
             </dl>
           </li>
           <li class="layui-nav-item" lay-unselect>
-            <a href="javascript:;" class="nav-menu-a"><i class="fa fa-list-alt fa-lg"></i>  <span class="menu-text">表单</span></a>
+            <a href="javascript:;" class="nav-menu-a"><i class="fa fa-list-alt" style="font-size: 16px;"></i>  <span class="menu-text">表单</span></a>
             <dl class="layui-nav-child">
               <dd class="child-menu"><a href="javascript:;" class="nav-menu-a-child" lay-unselect>列表一</a></dd>
               <dd class="child-menu"><a href="javascript:;" class="nav-menu-a-child" lay-unselect>列表二</a></dd>
@@ -80,7 +80,7 @@
     <!-- content start 内容部分开始 -->
     <div class="layui-body">
       <div class="layui-tab layui-tab-brief layui-tab-card" lay-allowClose="true" lay-filter="demo">
-        <ul class="layui-tab-title" id="tabTitle">
+        <ul class="layui-tab-title content-tab-title">
         	<li lay-id="0" style="display: none"><i class="layui-icon">&#xe68e;</i> 模板</li>
           <li lay-id="1" class="layui-this"><i class="layui-icon">&#xe68e;</i> 主页</li>
         </ul>
@@ -106,6 +106,8 @@
   <script src="../plugins/layer/layer.js"></script>
   <script src="../plugins/layui/layui.js"></script>
   <script src="../perfree/js/index.js"></script>
+  <script src="../perfree/js/menu.value.js"></script>
+  <script src="../perfree/js/common.js"></script>
   <script>
     layui.use('element', function(){
       var element = layui.element;

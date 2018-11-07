@@ -48,6 +48,9 @@
 .layui-nav-tree{
 	margin-top: 60px;
 }
+.layui-nav-item .nav-menu-a{
+	transition: transform .5s ease;
+}
 .layui-nav-tree .layui-nav-child .nav-menu-a-child{
 	padding-left: 40px;
 }
