@@ -11,17 +11,17 @@ function openTab(icon,menuName,url,tabId) {
 		}
 		if(eachcount >= $(".content-tab-title").find('li').length){
 			if(flag){
-				element.tabChange('demo', tabId);
+				element.tabChange('tabNav', tabId);
 				return;
 			}else{
 				//添加tab
-				element.tabAdd('demo', {
+				element.tabAdd('tabNav', {
 					title: "<i class='fa fa-"+icon+"' style='font-size: 16px;'></i>&nbsp;"+menuName,
 					content: "<iframe src='"+url+"' scrolling='auto' width='100%' height='100%' frameborder='0' class='layui-anim layui-anim-upbit'></iframe>", //支持传入html
 					id: tabId
 				});
 				//切换至新添加tab
-				element.tabChange('demo', tabId);
+				element.tabChange('tabNav', tabId);
 			}
 		}
 	});
@@ -38,7 +38,7 @@ $(".menuBtn").on("click",function(){
 	}
 });
 /** 菜单导航点击事件 */
-$('.nav-menu-a').on('click', function () {
+$('.left-menu').delegate('.nav-menu-a','click',function () {
 	if(flag == 1){
 		showNav();
 		flag = 0;
@@ -46,52 +46,43 @@ $('.nav-menu-a').on('click', function () {
 });
 /** 隐藏导航栏文字,显示图标 */
 function hideNav(){
-	$(".nav-menu-a > .menu-text").fadeOut(100);
-	$(".nav-menu-a > .layui-nav-more").fadeOut(100);
-	$(".left-navbar-menu").animate({width:50}, 300);
+	$(".nav-menu-a > .menu-text,.nav-menu-a > .layui-nav-more").fadeOut(100);
+	$(".left-navbar-menu,.layui-logo").animate({width:50}, 200);
 	$(".logo-text > .logo-text-value").fadeOut(0);
-	$(".layui-logo").animate({width:50}, 300);
-	$(".layui-body").animate({left:50}, 300);
-	$(".layui-footer").animate({left:50}, 300);
-	$(".navbar-header").animate({left:50},300);
-	$(".nav-header-right").animate({right:"70px"}, 300);
+	$(".layui-body,.layui-footer,.navbar-header").animate({left:50}, 200);
+	$(".nav-header-right").animate({right:"70px"}, 200);
 	$(".child-menu").css("display","none");
 }
 /** 显示完全菜单导航 */
 function showNav(){
 	layer.closeAll('tips');
-	$(".layui-body").animate({left:"200px"}, 300 );
-	$(".layui-footer").animate({left:"200px"}, 300 );
-	$(".navbar-header").animate({left:"200px"}, 300 );
-	$(".nav-header-right").animate({right:"220px"}, 300 );
-	$(".logo-text > .logo-text-value").delay(300).fadeIn(300);
-	$(".layui-logo").animate({width:200}, 300 );
-	$(".nav-menu-a > .menu-text").delay(300).fadeIn(300);
-	$(".nav-menu-a > .layui-nav-more").delay(300).fadeIn(0);
+	$(".layui-body,.layui-footer,.navbar-header").animate({left:"200px"}, 200 );
+	$(".nav-header-right").animate({right:"220px"}, 200 );
+	$(".logo-text > .logo-text-value,.nav-menu-a > .menu-text").delay(200).fadeIn(200);
+	$(".layui-logo,.left-navbar-menu").animate({width:200}, 200 );
+	$(".nav-menu-a > .layui-nav-more").delay(200).fadeIn(0);
 	$(".child-menu").css("display","block");
-	$(".left-navbar-menu").animate({width:"200px"},300 );
 }
-/** 菜单缩小时提示框 */
-$(".left-menu > .layui-nav-item").hover(
-	function(){
-		if(flag == 1){
-			var tip = $(this).children(".nav-menu-a").children(".menu-text").text();
-			var that = this;
-			layer.closeAll('tips');
-			layer.open({
-				type: 4,
-				shade: 0,
-				isOutAnim: false,
-				closeBtn: 0,
-				shadeClose: true,
-				content: [tip, that] //数组第二项即吸附元素选择器或者DOM
-			});
-		}
-	},
-	function(){
+/** 菜单缩小时,鼠标移出隐藏tips */
+$('.left-menu').on('mouseleave', '.layui-nav-item', function(){
+	layer.closeAll('tips');
+});
+/** 菜单缩小时,鼠标悬浮显示tips */
+$('.left-menu').on('mouseenter', '.layui-nav-item', function(){
+	if(flag == 1){
+		var tip = $(this).children(".nav-menu-a").children(".menu-text").text();
+		var that = this;
 		layer.closeAll('tips');
+		layer.open({
+			type: 4,
+			shade: 0,
+			isOutAnim: false,
+			closeBtn: 0,
+			shadeClose: true,
+			content: [tip, that] //数组第二项即吸附元素选择器或者DOM
+		});
 	}
-)
+});
 /** 顶部导航鼠标悬浮显示tips */
 $(".nav-top-icon").hover(
 	function(){
@@ -130,21 +121,9 @@ $(".nav-top-icon").hover(
 /**全屏*/
  $('.full-scann').on('click', function () {
 	 var docElm = document.documentElement;
-	 //W3C
-	if (docElm.requestFullscreen) {
-		docElm.requestFullscreen();
-	}
-	//FireFox
-	else if (docElm.mozRequestFullScreen) {
-		docElm.mozRequestFullScreen();
-	}
-	//Chrome等
-	else if (docElm.webkitRequestFullScreen) {
-		docElm.webkitRequestFullScreen();
-	}
-	//IE11
-	else if (elem.msRequestFullscreen) {
-		elem.msRequestFullscreen();
-	}
+	if (docElm.requestFullscreen) {docElm.requestFullscreen();}
+	else if (docElm.mozRequestFullScreen) {docElm.mozRequestFullScreen();}
+	else if (docElm.webkitRequestFullScreen) {docElm.webkitRequestFullScreen();}
+	else if (elem.msRequestFullscreen) {elem.msRequestFullscreen();}
 	layer.msg('按Esc即可退出全屏');
 });

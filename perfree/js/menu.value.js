@@ -1,9 +1,10 @@
 var menu=[
 	{
 		"name": "主页",
-		"url": "/main.html",
+		"url": "./main.html",
 		"isParent": "1",
-		"tabIcon": "home"
+		"tabIcon": "home",
+		"tabId": "1"
 	},
 	{
 		"name": "外部链接",
@@ -13,12 +14,14 @@ var menu=[
 			{
 				"name": "百度",
 				"url": "https://www.baidu.com",
-				"tabIcon": "&#xe615"
+				"tabIcon": "location-arrow",
+				"tabId": "2"
 			},
 			{
 				"name": "Perfree小记",
 				"url": "https://www.yinpengfei.com",
-				"tabIcon": "&#xe756"
+				"tabIcon": "location-arrow",
+				"tabId": "3"
 			}
 		]
 	},
@@ -30,12 +33,14 @@ var menu=[
 			{
 				"name": "列表一",
 				"url": "",
-				"tabIcon": "&#xe615"
+				"tabIcon": "location-arrow",
+				"tabId": "4"
 			},
 			{
 				"name": "列表二",
 				"url": "",
-				"tabIcon": "&#xe756"
+				"tabIcon": "location-arrow",
+				"tabId": "5"
 			}
 		]
 	}

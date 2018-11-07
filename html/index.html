@@ -50,28 +50,7 @@
           <a href="#" class="logo-text"><i class="fa fa-pagelines" style="font-size: 20px;"></i> <span class='logo-text-value'>Perfree-Admin</span></a>
         </div>
         <ul class="layui-nav layui-nav-tree left-menu"  lay-filter="menu" lay-shrink="all">
-          <li class="layui-nav-item" lay-unselect>
-            <a href="javascript:;" class="nav-menu-a" onclick="openTab('&#xe68e','主页','./main.html',1);"><i class="fa fa-home" style="font-size: 16px;"></i>  <span class="menu-text">主页</span></a>
-          </li>
-          <li class="layui-nav-item" lay-unselect>
-            <a href="javascript:;" class="nav-menu-a" ><i class="fa fa-location-arrow" style="font-size: 16px;"></i>  <span class="menu-text">外部链接</span></a>
-            <dl class="layui-nav-child">
-              <dd onclick="openTab('&#xe615;','百度','https://www.baidu.com',2)" class="child-menu" lay-unselect>
-                <a href="javascript:;" class="nav-menu-a-child" >百度</a>
-              </dd>
-              <dd class="child-menu" lay-unselect>
-                <a href="javascript:;" onclick="openTab('location-arrow','perfree小记','https://www.yinpengfei.com',3);" class="nav-menu-a-child" >Perfree小记</a>
-              </dd>
-            </dl>
-          </li>
-          <li class="layui-nav-item" lay-unselect>
-            <a href="javascript:;" class="nav-menu-a"><i class="fa fa-list-alt" style="font-size: 16px;"></i>  <span class="menu-text">表单</span></a>
-            <dl class="layui-nav-child">
-              <dd class="child-menu"><a href="javascript:;" class="nav-menu-a-child" lay-unselect>列表一</a></dd>
-              <dd class="child-menu"><a href="javascript:;" class="nav-menu-a-child" lay-unselect>列表二</a></dd>
-              <dd class="child-menu"><a href="javascript:;" class="nav-menu-a-child" lay-unselect>列表二</a></dd>
-            </dl>
-          </li>
+
         </ul>
       </div>
     </div>
@@ -79,10 +58,10 @@
 
     <!-- content start 内容部分开始 -->
     <div class="layui-body">
-      <div class="layui-tab layui-tab-brief layui-tab-card" lay-allowClose="true" lay-filter="demo">
+      <div class="layui-tab layui-tab-brief layui-tab-card" lay-allowClose="true" lay-filter="tabNav">
         <ul class="layui-tab-title content-tab-title">
         	<li lay-id="0" style="display: none"><i class="layui-icon">&#xe68e;</i> 模板</li>
-          <li lay-id="1" class="layui-this"><i class="layui-icon">&#xe68e;</i> 主页</li>
+          <li lay-id="1" class="layui-this"><i class="fa fa-home" style="font-size: 16px;"></i> 主页</li>
         </ul>
         <div class="layui-tab-content" id="tabContent">
           <div class="layui-tab-item layui-show">
@@ -112,6 +91,9 @@
     layui.use('element', function(){
       var element = layui.element;
     });
+    var menu = menu;
+    //初始化菜单,传入json字符串,json格式参考menu.value.js
+    util.initMenu(menu);
   </script>
 </body>
 </html>
