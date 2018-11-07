@@ -46,30 +46,30 @@ $('.nav-menu-a').on('click', function () {
 });
 /** 隐藏导航栏文字,显示图标 */
 function hideNav(){
-	$(".nav-menu-a > .menu-text").hide(0);
-	$(".nav-menu-a > .layui-nav-more").hide(0);
-	$(".left-navbar-menu").animate({width:50}, 0);
-	$(".logo-text > .logo-text-value").hide(0);
-	$(".layui-logo").animate({width:50}, 0);
-	$(".layui-body").animate({left:50}, 0);
-	$(".layui-footer").animate({left:50}, 0);
-	$(".navbar-header").animate({left:50},0);
-	$(".nav-header-right").animate({right:"70px"}, 0);
+	$(".nav-menu-a > .menu-text").fadeOut(100);
+	$(".nav-menu-a > .layui-nav-more").fadeOut(100);
+	$(".left-navbar-menu").animate({width:50}, 300);
+	$(".logo-text > .logo-text-value").fadeOut(0);
+	$(".layui-logo").animate({width:50}, 300);
+	$(".layui-body").animate({left:50}, 300);
+	$(".layui-footer").animate({left:50}, 300);
+	$(".navbar-header").animate({left:50},300);
+	$(".nav-header-right").animate({right:"70px"}, 300);
 	$(".child-menu").css("display","none");
 }
 /** 显示完全菜单导航 */
 function showNav(){
 	layer.closeAll('tips');
-	$(".layui-body").animate({left:"200px"}, 0 );
-	$(".layui-footer").animate({left:"200px"}, 0 );
-	$(".navbar-header").animate({left:"200px"}, 0 );
-	$(".nav-header-right").animate({right:"220px"}, 0 );
-	$(".logo-text > .logo-text-value").show();
-	$(".layui-logo").animate({width:200}, 0 );
-	$(".nav-menu-a > .menu-text").show();
-	$(".nav-menu-a > .layui-nav-more").show();
+	$(".layui-body").animate({left:"200px"}, 300 );
+	$(".layui-footer").animate({left:"200px"}, 300 );
+	$(".navbar-header").animate({left:"200px"}, 300 );
+	$(".nav-header-right").animate({right:"220px"}, 300 );
+	$(".logo-text > .logo-text-value").delay(300).fadeIn(300);
+	$(".layui-logo").animate({width:200}, 300 );
+	$(".nav-menu-a > .menu-text").delay(300).fadeIn(300);
+	$(".nav-menu-a > .layui-nav-more").delay(300).fadeIn(0);
 	$(".child-menu").css("display","block");
-	$(".left-navbar-menu").animate({width:"200px"},0 );
+	$(".left-navbar-menu").animate({width:"200px"},300 );
 }
 /** 菜单缩小时提示框 */
 $(".left-menu > .layui-nav-item").hover(
