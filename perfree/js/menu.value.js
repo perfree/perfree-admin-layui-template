@@ -10,7 +10,7 @@ var menu=[
 		"name": "LayUI文档",
 		"url": "https://www.layui.com/doc/",
 		"isParent": "1",
-		"tabIcon": "home",
+		"tabIcon": "book",
 		"tabId": "2"
 	},
 	{
@@ -21,13 +21,13 @@ var menu=[
 			{
 				"name": "百度",
 				"url": "https://www.baidu.com",
-				"tabIcon": "location-arrow",
+				"tabIcon": "search",
 				"tabId": "3"
 			},
 			{
 				"name": "Perfree小记",
 				"url": "https://www.yinpengfei.com",
-				"tabIcon": "location-arrow",
+				"tabIcon": "product-hunt",
 				"tabId": "4"
 			}
 		]
@@ -35,27 +35,27 @@ var menu=[
 	{
 		"name": "基础",
 		"isParent": "0",
-		"icon": "list-alt",
+		"icon": "envira",
 		"child": [
 			{
 				"name": "图标",
 				"url": "http://fontawesome.dashgame.com/",
-				"tabIcon": "location-arrow",
+				"tabIcon": "flag",
 				"tabId": "5"
 			},
 			{
 				"name": "表单",
 				"url": "./form.html",
-				"tabIcon": "location-arrow",
+				"tabIcon": "table",
 				"tabId": "6"
 			},
 			{
 				"name": "文件上传",
 				"url": "./file.html",
-				"tabIcon": "location-arrow",
+				"tabIcon": "file-o",
 				"tabId": "7"
 			}
-			
+
 		]
 	}
 ];

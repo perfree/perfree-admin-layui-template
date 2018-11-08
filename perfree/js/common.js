@@ -25,15 +25,24 @@
 				}
 			}
 			$(".left-menu").append($html);
-		},
+		},/** 加载外部css文件 */
 		dynamicLoadCss: function(url) {
-	        var head = document.getElementsByTagName('head')[0];
-	        var link = document.createElement('link');
-	        link.type='text/css';
-	        link.rel = 'stylesheet';
-	        link.href = url;
-	        head.appendChild(link);
-	    }
+			var head = document.getElementsByTagName('head')[0];
+			var link = document.createElement('link');
+			link.type='text/css';
+			link.rel = 'stylesheet';
+			link.href = url;
+			head.appendChild(link);
+		},/** iframe自适应 */
+		iframeAuto: function() {
+			$(window).on('resize', function () {
+          var $content = $('.layui-tab-content');
+          $content.height($(this).height() - 147);
+          $content.find('iframe').each(function () {
+              $(this).height($content.height());
+          });
+      }).resize();
+		}
 	}
 	window.util = new util();
 })(window.jQuery);

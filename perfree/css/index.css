@@ -65,28 +65,12 @@
 	left: 0;
 	top: 0;
 }
-.layui-tab-content{
-	padding: 10px;
-	position: absolute;
-	left: 0px;
-	right: 0;
-	top: 31px;
-	bottom: 0;
-}
 .layui-tab{
-	position: absolute;
-	left: 0px;
-	right: 0;
-	top: 0;
-	bottom: 0;
 	margin-top: 0;
+	border-width: 0px;
 }
-.layui-tab-item{
-	position: absolute;
-	left: 0px;
-	right: 0;
-	top: 10px;
-	bottom: 0;
+.layui-tab-content {
+    padding: 0;
 }
 .layui-nav .layui-nav-item a{
 	padding: 0 10px;
