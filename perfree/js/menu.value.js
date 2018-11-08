@@ -48,6 +48,12 @@ var menu=[
 				"url": "./form.html",
 				"tabIcon": "location-arrow",
 				"tabId": "6"
+			},
+			{
+				"name": "文件上传",
+				"url": "./file.html",
+				"tabIcon": "location-arrow",
+				"tabId": "7"
 			}
 			
 		]

@@ -17,7 +17,7 @@ function openTab(icon,menuName,url,tabId) {
 				//添加tab
 				element.tabAdd('tabNav', {
 					title: "<i class='fa fa-"+icon+"' style='font-size: 16px;'></i>&nbsp;"+menuName,
-					content: "<iframe src='"+url+"' scrolling='auto' width='100%' height='100%' frameborder='0' class='layui-anim layui-anim-upbit'></iframe>", //支持传入html
+					content: "<iframe src='"+url+"' scrolling='auto' width='100%' height='100%' frameborder='0' allowfullscreen='true' webkitallowfullscreen='true' mozallowfullscreen='true' class='layui-anim layui-anim-upbit'></iframe>", //支持传入html
 					id: tabId
 				});
 				//切换至新添加tab
