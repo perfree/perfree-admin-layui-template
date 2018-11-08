@@ -1,4 +1,4 @@
-//工具类示例,调用直接util.test();
+//工具类示例,调用直接util.initMenu();
 (function($){
 	var util = function(){}
 	util.prototype = {
@@ -26,14 +26,14 @@
 			}
 			$(".left-menu").append($html);
 		},
-
-		test:function(){
-			alert("123");
-		},
-
-		demo:function(){
-			alert("456");
-		}
+		dynamicLoadCss: function(url) {
+	        var head = document.getElementsByTagName('head')[0];
+	        var link = document.createElement('link');
+	        link.type='text/css';
+	        link.rel = 'stylesheet';
+	        link.href = url;
+	        head.appendChild(link);
+	    }
 	}
 	window.util = new util();
 })(window.jQuery);
