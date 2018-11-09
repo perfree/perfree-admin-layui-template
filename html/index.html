@@ -30,11 +30,12 @@
           <a href="javascript:;" lay-tips="全屏"  class="full-scann"><i class="fa fa-tv" style="font-size: 16px;"></i></a>
         </li>
         <li class="layui-nav-item" lay-unselect>
-          <a href="javascript:;">
+          <a href="javascript:;" class="user-and-img">
             <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
             Perfree&nbsp;&nbsp;
           </a>
-          <dl class="layui-nav-child">
+					<a href="javascript:;" class="user-and-icon"><i class="fa fa-user-o" style="font-size: 16px;"></i></a>
+          <dl class="layui-nav-child top-user-child">
             <dd><a href="">基本资料</a></dd>
             <dd><a href="">安全设置</a></dd>
           </dl>
@@ -81,6 +82,12 @@
     <!-- footer end 底部footer结束 -->
 
   </div>
+	<div class="layui-card theme">
+		<div class="layui-card-header">主题设置</div>
+		<div class="layui-card-body">
+			<a href="javascript:;" onclick="testTheme();">测试更换主题</a>
+		</div>
+	</div>
   <script src="../perfree/js/jquery.min.js"></script>
   <script src="../plugins/layer/layer.js"></script>
   <script src="../plugins/layui/layui.js"></script>
@@ -97,8 +104,8 @@
     util.initMenu(menu);
     //测试主题更换方法(未完成)
     function testTheme() {
-    	util.dynamicLoadCss('../perfree/css/theme/default.css')
-	}
+    	testTheme = util.dynamicLoadCss('../perfree/css/theme/default.css')
+		}
   </script>
 </body>
 </html>

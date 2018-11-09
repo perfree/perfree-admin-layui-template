@@ -42,7 +42,30 @@
               $(this).height($content.height());
           });
       }).resize();
-		}
+		},/** 获取当前屏幕宽度 */
+		getWidth: function(){
+			return $(window).width();
+		},/** 显示遮罩 */
+		coverShade: function(){    
+				var perfreebg = document.createElement("div");  
+				perfreebg.setAttribute("id","perfreeBg");    
+				perfreebg.style.background = "#000000";    
+				perfreebg.style.width = "100%";    
+				perfreebg.style.height = "100%";    
+				perfreebg.style.position = "fixed";    
+				perfreebg.style.top = "0";    
+				perfreebg.style.left = "0";    
+				perfreebg.style.zIndex = "1000";    
+				perfreebg.style.opacity = "0.2";    
+				perfreebg.style.filter = "Alpha(opacity=70)"; 
+				perfreebg.setAttribute("onclick","offShade();")
+				document.body.appendChild(perfreebg);    
+		},/**取消遮罩*/    
+		hideShade: function() {    
+				var body = document.getElementsByTagName("body");    
+				var perfreeBg = document.getElementById("perfreeBg");    
+				body[0].removeChild(perfreeBg);    
+		}  
 	}
 	window.util = new util();
 })(window.jQuery);
