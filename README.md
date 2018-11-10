@@ -1,1 +1,3 @@
 ## 基于LayUI开发的一款后台管理模板,开发中......
+简单的图片预览如下:
+[![Perfree-Admin](https://www.yinpengfei.com/group1/M00/00/02/rB802lvmvv6AI_OwAAG_gSZWiic302.png "Perfree-Admin")](https://www.yinpengfei.com/group1/M00/00/02/rB802lvmvv6AI_OwAAG_gSZWiic302.png "Perfree-Admin")
