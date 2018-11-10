@@ -14,23 +14,11 @@ var menu=[
 		"tabId": "2"
 	},
 	{
-		"name": "外部链接",
-		"isParent": "0",
-		"icon": "location-arrow",
-		"child": [
-			{
-				"name": "百度",
-				"url": "https://www.baidu.com",
-				"tabIcon": "search",
-				"tabId": "3"
-			},
-			{
-				"name": "Perfree小记",
-				"url": "https://www.yinpengfei.com",
-				"tabIcon": "product-hunt",
-				"tabId": "4"
-			}
-		]
+		"name": "FontAwesome图标",
+		"url": "http://fontawesome.dashgame.com/",
+		"isParent": "1",
+		"tabIcon": "flag",
+		"tabId": "3"
 	},
 	{
 		"name": "基础",
@@ -38,16 +26,10 @@ var menu=[
 		"icon": "envira",
 		"child": [
 			{
-				"name": "图标",
-				"url": "http://fontawesome.dashgame.com/",
-				"tabIcon": "flag",
-				"tabId": "5"
-			},
-			{
 				"name": "表单",
 				"url": "./form.html",
 				"tabIcon": "table",
-				"tabId": "6"
+				"tabId": "4"
 			},
 			{
 				"name": "文件上传",
