@@ -24,7 +24,7 @@
 	top: 0;
 	z-index: 1002;
 	width: 200px;
-	height: 59px;
+	height: 60px;
 	padding: 0px 10px;
 	box-sizing: border-box;
 	overflow: hidden;
@@ -94,7 +94,38 @@
     width: 288px;
     height: 100%;
 	background: white;
-	
+}
+.theme-box{
+    display: block;
+	border: 1px solid white;
+	width: 120px;
+    height: 88px;
+	float: left;
+	margin-right: 10px;
+}
+.theme-header{
+	border-bottom: 0;
+	height: 20px;
+}
+.theme-body{
+	padding: 0;
+}
+.left-menu-theme{
+    width: 35px;
+    height: 68px;
+	float: left;
+}
+.theme-name{
+	float: left;
+	width: 85px;
+	line-height: 68px;
+	text-align: center;
+}
+.theme-box:hover{
+	border:1px solid #5FB878;
+}
+.theme-box-body{
+	padding: 10px 12px;
 }
 @media screen and (max-width:640px ) {
 	.layui-layout-right{
@@ -131,6 +162,9 @@
 	}
 	.layui-header,.layui-body,.layui-layout-admin .layui-footer{
 		left: 0;
+	}
+	.layui-nav .layui-nav-item .donation-top{
+		display: none;
 	}
 	
 }

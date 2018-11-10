@@ -33,6 +33,15 @@
 			link.rel = 'stylesheet';
 			link.href = url;
 			head.appendChild(link);
+		},/** 移除css/js文件 */
+		removejscssfile: function(filename,filetype){
+			var targetelement=(filetype=="js")? "script" :(filetype=="css")? "link" : "none"
+			var targetattr=(filetype=="js")?"src" : (filetype=="css")? "href" :"none"
+			var allsuspects=document.getElementsByTagName(targetelement)
+			for (var i=allsuspects.length; i>=0;i--){
+			if (allsuspects[i] &&allsuspects[i].getAttribute(targetattr)!=null && allsuspects[i].getAttribute(targetattr).indexOf(filename)!=-1)
+			 allsuspects[i].parentNode.removeChild(allsuspects[i])
+			}
 		},/** iframe自适应 */
 		iframeAuto: function() {
 			$(window).on('resize', function () {
@@ -65,7 +74,18 @@
 				var body = document.getElementsByTagName("body");    
 				var perfreeBg = document.getElementById("perfreeBg");    
 				body[0].removeChild(perfreeBg);    
-		}  
+		},/** 初始化主题 */
+		initTheme: function(theme){
+			var html = "";
+			for(var i = 0;i < theme.length;i++){
+				html+='<a class="layui-card theme-box" href="javascript:;" css-url="'+theme[i].url+'">'+
+						'<div class="layui-card-header theme-header" style="background-color: '+theme[i].header+';"></div>'+
+						'<div class="layui-card-body theme-body">'+
+						'<div class="left-menu-theme" style="background-color: '+theme[i].menu+';border-top: 1px solid '+theme[i].border+';"></div>'+
+						'<div class="theme-name">'+theme[i].name+'</div></div></a>';
+			}
+			$(".theme-box-body").append(html);
+		}
 	}
 	window.util = new util();
 })(window.jQuery);

@@ -20,6 +20,9 @@
         </li>
       </ul>
       <ul class="layui-nav layui-layout-right nav-header-right">
+				<li class="layui-nav-item nav-top-icon" lay-unselect>
+					<a href="javascript:;" class="donation-top" lay-tips="捐赠我" onclick="donationMe()">捐赠我</a>
+				</li>
         <li class="layui-nav-item nav-top-icon" lay-unselect>
           <a href="javascript:;" lay-tips="消息"><i class="fa fa-bell-o" style="font-size: 16px;"></i></a>
         </li>
@@ -80,32 +83,30 @@
       © yinpengfei.com - Perfree小记
     </div>
     <!-- footer end 底部footer结束 -->
-
   </div>
+	<!-- theme start 主题设置开始 -->
 	<div class="layui-card theme">
 		<div class="layui-card-header">主题设置</div>
-		<div class="layui-card-body">
-			<a href="javascript:;" onclick="testTheme();">测试更换主题</a>
-		</div>
+		<div class="layui-card-body theme-box-body"></div>
 	</div>
+	<!-- theme end 主题设置结束 -->
   <script src="../perfree/js/jquery.min.js"></script>
   <script src="../plugins/layer/layer.js"></script>
   <script src="../plugins/layui/layui.js"></script>
   <script src="../perfree/js/index.js"></script>
   <script src="../perfree/js/menu.value.js"></script>
   <script src="../perfree/js/common.js"></script>
+	<script src="../perfree/js/theme.js"></script>
   <script>
+		//初始化菜单,传入json,格式参考menu.alue.js
+		util.initMenu(menu);
+		//ifram自适应
+		util.iframeAuto();
+		//初始化主题,如自己增加主题,可参考theme.js,增加json格式信息及css文件即可
+		util.initTheme(theme);
     layui.use('element', function(){
       var element = layui.element;
-      util.iframeAuto();
     });
-    var menu = menu;
-    //初始化菜单,传入json字符串,json格式参考menu.value.js
-    util.initMenu(menu);
-    //测试主题更换方法(未完成)
-    function testTheme() {
-    	testTheme = util.dynamicLoadCss('../perfree/css/theme/default.css')
-		}
   </script>
 </body>
 </html>

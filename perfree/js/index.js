@@ -144,3 +144,31 @@ function offShade() {
 	else if (elem.msRequestFullscreen) {elem.msRequestFullscreen();}
 	layer.msg('按Esc即可退出全屏');
 });
+/** 捐赠 */
+function donationMe(){
+	layer.tab({
+		area: ['350p', '393px'],
+		tab: [{
+			title: '微信支付', 
+			content: "<img src='../perfree/images/wechat.png' width='350px' height='350px'>"
+		}, {
+			title: '支付宝支付', 
+			content: "<img src='../perfree/images/pay.png' width='350px' height='350px'>"
+		}]
+	});
+}
+//测试主题更换方法(未完成)
+var cssArr="";
+$('.theme-box-body').delegate('.theme-box','click',function () {
+	if(cssArr == ""){
+		var url = $(this).attr("css-url");
+		cssArr = url;
+		util.dynamicLoadCss(url);
+	}else{
+		util.removejscssfile(cssArr,"css");
+		var url = $(this).attr("css-url");
+		cssArr = url;
+		util.dynamicLoadCss(url);
+	}
+	
+});
