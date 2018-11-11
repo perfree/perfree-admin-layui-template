@@ -135,6 +135,11 @@ function offShade() {
 	$(".theme").animate({right:"-288px"}, 200 );
 	 util.hideShade();
  }
+/** 刷新 */
+$('.refreshBtn').on('click', function () {
+	var content = $(".layui-show >iframe");
+	content.attr('src', content.attr('src'));
+});
 /**全屏*/
  $('.full-scann').on('click', function () {
 	 var docElm = document.documentElement;

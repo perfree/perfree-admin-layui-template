@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../plugins/layui/css/layui.css" media="all"> 
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+	<body style="background-color: white;">
+		<div class="layui-container" style="width: 100%;margin-top: 10px;">
+			<blockquote class="layui-elem-quote">由于接口问题,通过本地访问数据可能会不展示,当你真正应用到项目中是有数据的</blockquote>
+			<table class="layui-table">
+			  <colgroup>
+				<col width="150">
+				<col width="200">
+				<col>
+			  </colgroup>
+			  <thead>
+				<tr>
+				  <th>昵称</th>
+				  <th>加入时间</th>
+				  <th>签名</th>
+				</tr> 
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>贤心</td>
+				  <td>2016-11-29</td>
+				  <td>人生就像是一场修行</td>
+				</tr>
+				<tr>
+				  <td>许闲心</td>
+				  <td>2016-11-28</td>
+				  <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+				</tr>
+			  </tbody>
+			</table>
+			<table class="layui-hide" id="test1"></table>
+			<table class="layui-hide" id="test2" lay-filter="test"></table>
+			<blockquote class="layui-elem-quote">官方文档:<a href="https://www.layui.com/demo/table/parseData.html" style="color: #00F7DE;">表格数据</a></blockquote>
+		</div>
+		<script src="../plugins/layui/layui.js"></script>
+		<script src="../perfree/js/jquery.min.js"></script>
+		<script>
+			layui.use('table', function() {
+				var table = layui.table;
+
+				table.render({
+					elem: '#test1',
+					url: 'https://www.layui.com/demo/table/user/',
+					cols: [[
+						{field: 'id',width: 80,title: 'ID',sort: true}, 
+						{field: 'username',width: 80,title: '用户名'}, 
+						{field: 'sex',width: 80,title: '性别',sort: true}, 
+						{field: 'city',width: 80,title: '城市'}, 
+						{field: 'sign',title: '签名',minWidth: 150}, 
+						{field: 'experience',width: 80,title: '积分',sort: true}, 
+						{field: 'score',width: 80,title: '评分',sort: true}, 
+						{field: 'classify',width: 80,title: '职业'}, 
+						{field: 'wealth',width: 135,title: '财富',sort: true},
+						]],
+					page: true
+				});
+				table.render({
+					elem: '#test2'
+					,url:'https://www.layui.com/test/table/demo3.json'
+					,toolbar: true
+					,title: '用户数据表'
+					,totalRow: true
+					,cols: [[
+					  {field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true, totalRowText: '合计行'}
+					  ,{field:'username', title:'用户名', width:120, edit: 'text'}
+					  ,{field:'email', title:'邮箱', width:150, edit: 'text'}
+					  ,{field:'experience', title:'积分', width:80, sort: true, totalRow: true}
+					  ,{field:'sex', title:'性别', width:80, edit: 'text', sort: true}
+					  ,{field:'logins', title:'登入次数', width:100, sort: true, totalRow: true}
+					  ,{field:'sign', title:'签名'}
+					  ,{field:'city', title:'城市', width:100}
+					  ,{field:'ip', title:'IP', width:120}
+					  ,{field:'joinTime', title:'加入时间', width:120}
+					]]
+					,page: true
+					,response: {
+					  statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
+					}
+					,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
+					  return {
+						"code": res.status, //解析接口状态
+						"msg": res.message, //解析提示文本
+						"count": res.total, //解析数据长度
+						"data": res.rows.item //解析数据列表
+					  };
+					}
+				  });
+			});
+		</script>
+	</body>
+</html>

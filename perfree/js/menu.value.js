@@ -35,9 +35,34 @@ var menu=[
 				"name": "文件上传",
 				"url": "./file.html",
 				"tabIcon": "file-o",
-				"tabId": "7"
+				"tabId": "5"
+			},
+			{
+				"name": "表格",
+				"url": "./table.html",
+				"tabIcon": "table",
+				"tabId": "5"
+			},
+			{
+				"name": "更多示例",
+				"url": "https://www.layui.com/demo/",
+				"tabIcon": "print",
+				"tabId": "6"
 			}
 
+		]
+	},
+	{
+		"name": "页面",
+		"isParent": "0",
+		"icon": "puzzle-piece",
+		"child": [
+			{
+				"name": "文章管理",
+				"url": "./article-manager.html",
+				"tabIcon": "list-alt",
+				"tabId": "7"
+			}
 		]
 	}
 ];
